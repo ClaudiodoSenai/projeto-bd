@@ -38,4 +38,25 @@ class UsuarioRequest extends FormRequest
             'error' =>$validator->errors()
         ]));
     }
+
+    public function messages()
+    {
+        return[
+            'nome.required' => "O campo nome é obrigatorio",
+            'nome.max' => 'o campo nome deve conter no máximo 80 caracteres',
+            'nome.min'=> 'o campo nome deve conter no minimo 5 caracteres',
+            'cpf.required' =>'CPF obrigatório',
+            'cpf.max' => 'CPF deve conter no máximo 11 caracteres',
+            'cpf.min' => 'CPF deve conter no mínimo 11 caracteres',
+            'cpf.unique' => 'Cpf Já cadastrado no sistema',
+            'celular.required' => 'Celular obrigatorio',
+            'celular.max' => 'celular deve conter no maximo 15 caracteres',
+            'celular.min' => 'celular deve conter no minimo 10 caracteres',
+            'email.required' => 'Email obrigatorio',
+            'email.email' => 'formato de email invalido',
+            'email.unique' => 'E-mail já cadastrado',
+            'password.required' => 'Senha obrigatoria'
+            
+        ];
+    }
 }
