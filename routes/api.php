@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\UsuarioController;
+use App\Http\Requests\UsuarioRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,3 +15,7 @@ Route::get ('all',
 [UsuarioController::class, 'retornarTodos']);
 
 Route::post ('nome', [UsuarioController::class, 'pesquisarPorNome']);
+
+Route::delete('delete/{id}',[UsuarioController::class, 'excluir']);
+
+Route::put('update', [UsuarioController::class, 'update']);
